@@ -17,7 +17,7 @@ Designed functionalities of the app:
 * Users can select random seed, so that they can repeat the run for exact the same result. Or they can manually repeat the sampler for their preferred seed to check the consistancy of the result
 * Users can get a code contains information of his/her query, and using this code they can repeat the result without setting the parameters and card list again
 
-__If anyone can share with me a better database, please me please :)__
+__If anyone can share with me a better database, inform me please :)__
 
 ## Models
 
