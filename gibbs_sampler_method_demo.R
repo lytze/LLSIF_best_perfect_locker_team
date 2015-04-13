@@ -5,7 +5,7 @@ song_len <- 4 * 60 * 2
 note_num <- 350
 
 # Make a matrix, rows are time seq of each card
-example <- c(58, 59, 73, 92, 122, 133, 134, 143, 202, 212, 220, 246, 264, 272)
+example <- sample(pf_lockers$CardID, 12)
 example_cards <- pf_lockers[pf_lockers$CardID %in% example, ]
 gen_time_seq <- function(card_id) {
     ## Get the card info by card ID
