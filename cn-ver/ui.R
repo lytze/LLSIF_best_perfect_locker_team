@@ -13,6 +13,8 @@ shinyUI(fluidPage(
     fluidRow(
         
         column(width = 7,
+            
+               htmlOutput('tryO'),
         
             h4('选择您拥有的判定卡'),
             
@@ -52,10 +54,10 @@ shinyUI(fluidPage(
             hr(),
             
             actionButton(inputId = 'submit', label = '确认',
-                         icon('ok', lib = 'glyphicon'))
+                         icon('ok', lib = 'glyphicon')),
+            htmlOutput('warnNineCard')
         
         )
-        # click submit to submit the selection
         
     )
     
