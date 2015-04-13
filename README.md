@@ -7,17 +7,21 @@ This project is a helper application to the mobile game __Love Live SIF__. Perfe
 
 ## Features
 
-Currently the web app is still building. The `table.html` conteins the perfect locker data currently avaliable, and the `gibbs_sampler_method_demo.R` script describes the method of generating the list.
+Chinese version partly finished:
 
-Designed functionalities of the app:
+* Select card from a table
+* Add card using side panle
+* Output currently is only a list of card ID
 
-* Users select their card from a given list, and can fix the values in the list manually (because the cards may have appeals levels greater than 1)
-* Users can also add card information that are not contained in the data (because I do not have the hole data set and/or can not update the data on time)
-* Users can select note density and length of the song (or some default value sets)
-* Users can select random seed, so that they can repeat the run for exact the same result. Or they can manually repeat the sampler for their preferred seed to check the consistancy of the result
-* Users can get a code contains information of his/her query, and using this code they can repeat the result without setting the parameters and card list again
+Todo:
 
-__If anyone can share with me a better database, inform me please :)__
+* Using js to make the checkboxes checked when the row is cliked
+* Format output information
+	- firstly a line of card name / card images
+	- then (on click some button) shows the plot of probabilty of effect called over time
+	- finally (on click some button) shows the record plot of the gibbs sampler
+* Let user define the song length and beat number (also offers a reference table of songs' information)
+* Add EN and JP version
 
 ## Models
 
