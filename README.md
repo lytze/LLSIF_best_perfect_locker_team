@@ -5,6 +5,8 @@ Love Live! School Idol Fest - Best Perfect Locker Team Organizer
 
 This project is a helper application to the mobile game __Love Live SIF__. Perfect locker cards, in the game, will cast effect that turns 'Good' and 'Great' beats into 'Perfect' for a certain length of time (typically 2-4 sec). The effect will be called repeatedly by a fixed interval or by some numbers of beats (notes), and for some likelyhood the effect will be cast successfully for each call. This project is aimed to build an web app that allows uses to select their perfect locker cards they have, and returns the best team avaliable.
 
+The partly finished application is hosted on (chinese version) [here](http://www.lytzeworkshop.com:3838/playground/shiny_app/best_pf_locker_cn_ver/)
+
 ## Features
 
 Chinese version partly finished:
