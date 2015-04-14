@@ -33,7 +33,7 @@ run_gibbs_sampler <- function(selected, card_list, song_len, note_num) {
     rep_time <- 1
     
     for (iter in 1:100) {
-        incProgress(iter / 1000)
+        incProgress(0.9 / 100)
         
         # Firstly, discard 1 card, pr depends on conttribution to the effect seq
         cur_effect <- sum(gen_effect_seq(gibbs_samp))

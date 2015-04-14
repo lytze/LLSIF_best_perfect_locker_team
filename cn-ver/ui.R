@@ -5,7 +5,8 @@ shinyUI(fluidPage(
     title = 'Best Perfect Locker Team Organizer',
     
     tags$head(
-        tags$link(rel = "stylesheet", type = "text/css", href = "table.css")
+        tags$link(rel = "stylesheet", type = "text/css", href = "table.css"),
+        tags$link(rel = "stylesheet", type = "text/css", href = "resTable.css")
     ),
     
     uiOutput('outputResult'),
@@ -18,8 +19,8 @@ shinyUI(fluidPage(
         
             h4('选择您拥有的判定卡'),
             
-            helpText('下列卡片按照卡片 ID 排列, 您可以在游戏中 "其他 -> 相簿" \
-                     中查看到按 ID 排列的卡片列表'),
+            helpText('下列卡片按照卡片 ID 排列, 为方便选择, 您可以在游戏中 \
+                    "其他 -> 相簿" 中查看到按 ID 排列的卡片列表'),
             
             # show a table of candidate card list
             htmlOutput('cardList')
@@ -30,6 +31,7 @@ shinyUI(fluidPage(
         
             # add new data
             h4('添加新卡面'),
+            helpText('这里您可以添加列表中没有的卡片'),
             textInput(inputId = 'newName',
                       label = '卡面名字:',
                       value = '新卡面'),
@@ -53,12 +55,23 @@ shinyUI(fluidPage(
             
             hr(),
             
+            h4('修改运行参数'),
+            numericInput(inputId = 'songLen',
+                         label = '歌曲长度 (分):',
+                         value = 4,
+                         min = 3, max = 5, step = 0.01),
+            numericInput(inputId = 'noteNum',
+                         label = 'Note 数量:',
+                         value = 390,
+                         min = 10, max = 600, step = 1),
             actionButton(inputId = 'submit', label = '确认',
                          icon('ok', lib = 'glyphicon')),
             htmlOutput('warnNineCard')
         
         )
         
-    )
+    ),
+    
+    tags$script(type = "text/javascript", src = "table.js")
     
 ))

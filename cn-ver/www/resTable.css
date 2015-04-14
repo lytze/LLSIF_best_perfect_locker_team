@@ -1,0 +1,30 @@
+table.resTable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	border-collapse: collapse;
+	width: 62%;
+	table-layout: fixed;
+}
+
+table.resTable th {
+	padding: 8px;
+	background-color: #dedede;
+	height: 70;
+	border-left-style: solid;
+	border-left-color: #fff;
+	border-left-width: 2px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	border-right-width: 10px;
+}
+
+table.resTable td {
+	padding: 8px;
+	background-color: #dedede;
+	border-left-style: solid;
+	border-left-color: #fff;
+	border-left-width: 2px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	border-right-width: 10px;
+}
