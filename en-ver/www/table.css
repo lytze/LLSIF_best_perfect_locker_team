@@ -1,0 +1,28 @@
+table.shtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	border-collapse: collapse;
+	width: 100%;
+}
+table.shtable th {
+	border-width: 1px;
+	padding: 8px;
+	background-color: #dedede;
+	height: 70;
+}
+table.shtable td {
+	padding: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #dedede;
+}
+table.shtable tbody tr {
+	background-color: #ffffff;
+	cursor: pointer;
+}
+table.shtable tr:hover {
+	background-color: #ffb;
+}
+table.shtable tr td input {
+	display: none;
+}

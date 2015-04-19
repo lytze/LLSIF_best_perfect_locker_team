@@ -5,7 +5,7 @@ Love Live! School Idol Fest - Best Perfect Locker Team Organizer
 
 This project is a helper application to the mobile game __Love Live SIF__. Perfect locker cards, in the game, will cast effect that turns 'Good' and 'Great' beats into 'Perfect' for a certain length of time (typically 2-4 sec). The effect will be called repeatedly by a fixed interval or by some numbers of beats (notes), and for some likelyhood the effect will be cast successfully for each call. This project is aimed to build an web app that allows uses to select their perfect locker cards they have, and returns the best team avaliable.
 
-The partly finished application is hosted on (chinese version) [here](http://www.lytzeworkshop.com:3838/playground/shiny_app/best_pf_locker_cn_ver/)
+The partly finished application is hosted on my site: [English Version](http://www.lytzeworkshop.com:3838/playground/shiny_app/best_pf_locker_en_ver/) [中文版](http://www.lytzeworkshop.com:3838/playground/shiny_app/best_pf_locker_cn_ver/)
 
 ## Features
 
@@ -60,5 +60,7 @@ Love Live! SIF 最佳判定组选择器
 计划构建一个 Love Live! SIF 最佳判定组的选择器网页应用, 用户可以选择自己拥有的判定卡, 服务器反馈在拥有的判定卡中, 最佳的组合是什么.
 
 由于判定效果叠加不会继续加强判定, 并且时间分别计算不会累加, 因此我们通过优化得到判定强化的概率在时间上分布的积分来得到最佳的卡组. 使用 Gibbs Sampler 算法, 算法实现见 `gibbs_sampler_method_demo.R` 脚本.
+
+中文版地址: [点我](http://www.lytzeworkshop.com:3838/playground/shiny_app/best_pf_locker_cn_ver/)
 
 如果您可以提供更好地数据, 请务必联系我! :)

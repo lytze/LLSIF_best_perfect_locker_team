@@ -17,10 +17,11 @@ shinyUI(fluidPage(
             
                htmlOutput('tryO'),
         
-            h4('选择您拥有的判定卡'),
+            h4('Select Perfect Locker Cards in Your Box'),
             
-            helpText('下列卡片按照卡片 ID 排列, 为方便选择, 您可以在游戏中 \
-                    "其他 -> 相簿" 中查看到按 ID 排列的卡片列表'),
+            helpText('The list is sorted according to the card ID, you can \
+                    go into "Album" in the game for conveniance which in also \
+                    sorted by card ID'),
             
             # show a table of candidate card list
             htmlOutput('cardList')
@@ -30,41 +31,41 @@ shinyUI(fluidPage(
         column(width = 5,
         
             # add new data
-            h4('添加新卡面'),
-            helpText('这里您可以添加列表中没有的卡片'),
+            h4('Add New Card'),
+            helpText('You can add cards absent from the list'),
             textInput(inputId = 'newName',
-                      label = '卡面名字:',
-                      value = '新卡面'),
+                      label = 'Card Name:',
+                      value = 'new card'),
             numericInput(inputId = 'newInterval',
-                         label = '判定间隔:',
+                         label = 'Yell Interval:',
                          value = 1,
                          min = 0.5, max = 30, step = 0.5),
             selectInput(inputId = 'newType',
-                        label = '间隔类型:',
-                        choices = c('秒数', 'Note 数')),
+                        label = 'Interval Type:',
+                        choices = c('Second', 'Note Number')),
             numericInput(inputId = 'newRate',
-                         label = '成功几率 (%):',
+                         label = 'Success Rate (%):',
                          value = 36,
                          min = 0, max = 100, step = 1),
             numericInput(inputId = 'newDur',
-                         label = '持续时间 (秒):',
+                         label = 'Effect Duration (sec):',
                          value = 3,
                          min = 0, max = 20, step = 0.5),
-            actionButton(inputId = 'addNew', label = '加入',
+            actionButton(inputId = 'addNew', label = 'ADD',
                          icon('plus', lib = 'glyphicon')),
             
             hr(),
             
-            h4('修改运行参数'),
+            h4('Fix Program Parameters'),
             numericInput(inputId = 'songLen',
-                         label = '歌曲长度 (分):',
+                         label = 'Song Length (min):',
                          value = 4,
                          min = 3, max = 5, step = 0.01),
             numericInput(inputId = 'noteNum',
-                         label = 'Note 数量:',
+                         label = 'Note Number:',
                          value = 390,
                          min = 10, max = 600, step = 1),
-            actionButton(inputId = 'submit', label = '确认',
+            actionButton(inputId = 'submit', label = 'RUN For Me',
                          icon('ok', lib = 'glyphicon')),
             htmlOutput('warnNineCard'),
             

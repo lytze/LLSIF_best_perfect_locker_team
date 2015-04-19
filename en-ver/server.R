@@ -19,7 +19,7 @@ shinyServer(function(input, output, session) {
                                 Name = input$newName,
                                 Rareness = NA,
                                 Jump = input$newInterval,
-                                Type = ifelse(input$newType == '秒数', 'S', 'N'),
+                                Type = ifelse(input$newType == 'Second', 'S', 'N'),
                                 Rate = input$newRate,
                                 Duration = input$newDur,
                                 stringsAsFactors = F),
@@ -32,7 +32,7 @@ shinyServer(function(input, output, session) {
         
         input$addNew
         
-        withProgress(message = '...加载列表中...', {
+        withProgress(message = '...Loading List Nya...', {
             card_list_o <- card_list
             Img <- paste('<img src="', card_list_o$Img0, '" height="50px" width="50px">
              <img src="', card_list_o$Img1, '" height="50px" width="50px">', sep = '')
@@ -45,12 +45,12 @@ shinyServer(function(input, output, session) {
                 card_list_o$CardID,
                 sep = ''
             )
-            show_table <- cbind(卡片ID = card_list_o$CardID, 图像 = Img,
-                                角色 = card_list_o$Name,
-                                判定间隔 = paste(card_list_o$Jump,
-                                             ifelse(card_list_o$Type == 'S', '秒', 'Notes')),
-                                成功概率 = paste(card_list_o$Rate, '%', sep = ''),
-                                持续时间 = paste(card_list_o$Duration, '秒'))
+            show_table <- cbind(Card_ID = card_list_o$CardID, Image = Img,
+                                Character = card_list_o$Name,
+                                Yell_Interval = paste(card_list_o$Jump,
+                                             ifelse(card_list_o$Type == 'S', 'sec', 'notes')),
+                                Success_Rate = paste(card_list_o$Rate, '%', sep = ''),
+                                Effect_Duration = paste(card_list_o$Duration, 'sec'))
             innerHTMLTable <- kable(show_table, align = 'c', format = 'html', escape = F,
                                     table.attr = 'class="shtable"')
             innerHTMLTable <- gsub('<tr>\\n(\\s)+<td',
@@ -75,7 +75,7 @@ shinyServer(function(input, output, session) {
         # extract selected data
         selected <- input$selectedCard
         if (length(selected) > 9) {
-            withProgress(message = '...少女祈祷中...', value = 0, {
+            withProgress(message = '...NicoNicoNiiii...', value = 0, {
                 outcome <- run_gibbs_sampler(selected, card_list, song_len, note_num)
                 outcome_list <- card_list[card_list$CardID %in% outcome$team, ]
                 incProgress(0.05)
@@ -122,7 +122,7 @@ shinyServer(function(input, output, session) {
             output$outputResult <- renderUI({
                 fluidRow(
                     column(width = 12, 
-                          h4('您的最佳判定卡组为'),
+                          h4('Your Best Perfect Locker Team is'),
                           htmlOutput('outcomeTable'),
 #                           plotOutput('showProbabilityChart'),
 #                           plotOutput('showGibbsSamplerRecord'),
@@ -132,7 +132,7 @@ shinyServer(function(input, output, session) {
             })
         }
         else output$warnNineCard <- renderText(
-            '<span style="color:#900">请选择 9 张以上卡片</span>')
+            '<span style="color:#900">Please Select MORE than 9 Cards</span>')
         
     })
     
