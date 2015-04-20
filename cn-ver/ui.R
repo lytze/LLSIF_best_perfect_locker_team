@@ -72,11 +72,11 @@ shinyUI(fluidPage(
             
             h5('Visit me at:'),
             tags$p('github: ', 
-                   tags$a('click here', href = 'https://github.com/')),
+                   tags$a('click here', href = 'https://github.com/lytze')),
             tags$p('my Home Page: ',
-                   tags$a('click here', href = 'https://www.lytzeworkshop.com')),
+                   tags$a('click here', href = 'http://www.lytzeworkshop.com')),
             tags$p('Webo: ',
-                   tags$a('click here', href = 'http://www.weibo.com/2265661804/'))
+                   tags$a('click here', href = 'http://www.weibo.com/2265661804'))
         
         )
         
