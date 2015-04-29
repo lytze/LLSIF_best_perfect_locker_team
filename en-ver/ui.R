@@ -6,7 +6,8 @@ shinyUI(fluidPage(
     
     tags$head(
         tags$link(rel = "stylesheet", type = "text/css", href = "table.css"),
-        tags$link(rel = "stylesheet", type = "text/css", href = "resTable.css")
+        tags$link(rel = "stylesheet", type = "text/css", href = "resTable.css"),
+        tags$script(type = "text/javascript", src = "ga.js")
     ),
     
     uiOutput('outputResult'),

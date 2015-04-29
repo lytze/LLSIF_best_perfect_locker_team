@@ -17,13 +17,13 @@ Chinese version partly finished:
 
 Todo:
 
+* Using API provided by [SchoolIdolTomodachi](https://github.com/SchoolIdolTomodachi/SchoolIdolAPI/wiki/LoveLive!-School-Idol-API)
 * Using js to make the checkboxes checked when the row is cliked
 * Format output information
 	- firstly a line of card name / card images
 	- then (on click some button) shows the plot of probabilty of effect called over time
 	- finally (on click some button) shows the record plot of the gibbs sampler
-* Let user define the song length and beat number (also offers a reference table of songs' information)
-* Add EN and JP version
+* Add JP version
 
 ## Models
 
