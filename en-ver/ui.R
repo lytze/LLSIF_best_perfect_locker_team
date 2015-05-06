@@ -60,7 +60,7 @@ shinyUI(fluidPage(
             h4('Fix Program Parameters'),
             numericInput(inputId = 'songLen',
                          label = 'Song Length (min):',
-                         value = 4,
+                         value = 2,
                          min = 3, max = 5, step = 0.01),
             numericInput(inputId = 'noteNum',
                          label = 'Note Number:',

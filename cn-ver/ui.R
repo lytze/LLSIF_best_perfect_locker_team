@@ -59,7 +59,7 @@ shinyUI(fluidPage(
             h4('修改运行参数'),
             numericInput(inputId = 'songLen',
                          label = '歌曲长度 (分):',
-                         value = 4,
+                         value = 2,
                          min = 3, max = 5, step = 0.01),
             numericInput(inputId = 'noteNum',
                          label = 'Note 数量:',
