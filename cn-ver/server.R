@@ -1,11 +1,17 @@
 require(shiny)
 require(knitr)
 
+card_list <- read.csv('./LoveliveSIF_CNServer_pfLocker_card_list.csv',
+                      as.is = T)
+source('./main_function.R')
+
 shinyServer(function(input, output, session) {
+    # set logfile
+    sink(paste('~/shinylog/best_pf_locker/', Sys.Date(), sep = ''),
+         append = T, type = 'output')
+    user <- paste(Sys.time(), 'CN', sep = '')
+    cat('User: ', user, '\n', sep = '')
     
-    card_list <- read.csv('./LoveliveSIF_CNServer_pfLocker_card_list.csv',
-                     as.is = T)
-    source('./main_function.R')
     selected <- character(0)
 #     selected <- card_list$CardID[1:20]
     
@@ -74,6 +80,7 @@ shinyServer(function(input, output, session) {
         note_num <- input$noteNum
         # extract selected data
         selected <- input$selectedCard
+        cat('User: ', user, ' Run: ', selected, '\n', sep = '')
         if (length(selected) > 9) {
             withProgress(message = '...少女祈祷中...', value = 0, {
                 outcome <- run_gibbs_sampler(selected, card_list, song_len, note_num)

@@ -1,11 +1,17 @@
 require(shiny)
 require(knitr)
 
+card_list <- read.csv('./LoveliveSIF_CNServer_pfLocker_card_list.csv',
+                      as.is = T)
+source('./main_function.R')
+
 shinyServer(function(input, output, session) {
+    # set logfile
+    sink(paste('~/shinylog/best_pf_locker/', Sys.Date(), sep = ''),
+         append = T, type = 'output')
+    user <- paste(Sys.time(), 'EN', sep = '')
+    cat('User: ', user, '\n', sep = '')
     
-    card_list <- read.csv('./LoveliveSIF_CNServer_pfLocker_card_list.csv',
-                     as.is = T)
-    source('./main_function.R')
     selected <- character(0)
 #     selected <- card_list$CardID[1:20]
     
